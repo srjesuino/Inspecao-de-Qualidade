@@ -5,6 +5,8 @@ Este projeto é uma solução robusta e inovadora desenvolvida para otimizar o p
 
 O sistema foi projetado para atender às necessidades de controle de qualidade, permitindo que os usuários realizem consultas em tempo real a partir de códigos de barras, registrem inspeções detalhadas e apontem dados diretamente para um ERP via API SOAP. A aplicação destaca-se por sua capacidade de gerenciar dados complexos, incluindo captura de imagens via câmera, integração com QR codes e validações rigorosas para garantir a integridade das informações.
 
+![Apontar_Qualidade](/Screenshots-Video/Apontar_Qualidade.png)
+
 ## 🚀 Principais Recursos
 - **Consulta Dinâmica:** Integração com um banco de dados SQL Server para consultas detalhadas baseadas em códigos de barras, exibindo informações como lote, operação, recurso e quantidade de forma imediata e precisa.
 - **Registro de Inspeções:** Interface amigável para registrar defeitos, quantidades não conformes e observações, com suporte a dropdowns dinâmicos atualizados via AJAX e persistência em sessão.
