@@ -15,7 +15,7 @@ O sistema foi projetado para atender às necessidades de controle de qualidade, 
 - **Design Responsivo:** Estilização moderna com CSS personalizado e Bootstrap, assegurando uma experiência consistente em desktops e dispositivos móveis, com ajustes dinâmicos de altura usando variáveis CSS.
 - **Validações e Feedback:** Lógica sofisticada para validar quantidades (inspecionadas, refugo e conserto) e fornecer alertas ao usuário, prevenindo erros durante o processo.
 
-![Video de Apresentacao](/Screenshots-Video/Apontamento_Qualidade_Google_Chrome_2025-03-21_14-37-40.mp4)
+![Video de Apresentacao](/Screenshots-Video/DropDown.gif)
 
 ## 🛠️ Tecnologias Utilizadas
 - **Back-end:** PHP com classes orientadas a objetos para consultas ao banco de dados (SQL Server via sqlsrv) e integração SOAP.
