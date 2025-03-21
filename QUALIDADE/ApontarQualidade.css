@@ -1,0 +1,598 @@
+body {
+    display: flex; /* Define o layout como flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: calc(var(--vh, 1vh) *100); /* Altura ajustada para 100% da viewport */
+}
+
+/* Firefox (descomente para funcionar no Firefox, embora outras propriedades não funcionem!) */
+/** {
+  scrollbar-width: thin; Define largura da barra de rolagem
+  scrollbar-color: #397524 #DFE9EB; Define cores da barra e fundo
+}*/
+
+/* Chrome, Edge e Safari */
+*::-webkit-scrollbar {
+    height: 8px; /* Altura da barra de rolagem horizontal */
+    width: 8px; /* Largura da barra de rolagem vertical */
+}
+*::-webkit-scrollbar-track {
+    border-radius: 5px; /* Bordas arredondadas da trilha */
+    background-color: #DFE9EB; /* Cor de fundo da trilha */
+    border: 2px solid #FFFFFF; /* Borda branca ao redor da trilha */
+}
+
+*::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2; /* Cor da trilha ao passar o mouse */
+}
+
+*::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2; /* Cor da trilha ao clicar */
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 20px; /* Bordas arredondadas do polegar */
+    background-color: #397524; /* Cor do polegar (verde escuro) */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #62A34B; /* Cor do polegar ao passar o mouse (verde mais claro) */
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background-color: #62A34B; /* Cor do polegar ao clicar */
+}
+
+.bloco {
+    display: flex; /* Layout flexível */
+    flex-direction: column; /* Itens organizados em coluna */
+    width: 80%; /* Largura de 80% da tela */
+    height: 80%; /* Altura de 80% da tela */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Texto centralizado */
+    border-radius: 37px; /* Bordas arredondadas */
+    justify-content: center; /* Centraliza conteúdo verticalmente */
+}
+
+#dados {
+    display: grid; /* Layout em grade */
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho igual */
+    grid-template-rows: repeat(3, 1fr); /* 3 linhas de tamanho igual */
+    grid-column-gap: 0px; /* Sem espaçamento entre colunas */
+    grid-row-gap: 0px; /* Sem espaçamento entre linhas */
+    height: 100%; /* Altura total */
+    margin-top: 45px; /* Margem superior */
+    margin-bottom: 35px; /* Margem inferior */
+    padding-left: 20px; /* Preenchimento à esquerda */
+    padding-right: 20px; /* Preenchimento à direita */
+}
+
+#dadosup {   
+    justify-items: center; /* Centraliza itens horizontalmente */
+    overflow: auto; /* Rolagem se o conteúdo exceder */
+    height: 60%; /* Altura de 60% */
+    border-top: 1px solid #CCCCCC; /* Borda superior cinza */
+}
+
+#leitor {
+    background-color: white; /* Fundo branco */
+    position: fixed; /* Posição fixa na tela */
+    height: 30px; /* Altura fixa */
+    width: 80%; /* Largura de 80% */
+    z-index: 10; /* Camada acima de outros elementos */
+}
+
+#codigobarra {
+    text-align: center; /* Texto centralizado */
+    border-radius: 6px; /* Bordas arredondadas */
+    width: 40%; /* Largura de 40% */
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; /* Sombra leve */
+}
+
+#inspecoes {
+    height: 100%; /* Altura total */
+    border-radius: 30px; /* Bordas arredondadas */
+    box-shadow: inset 0px 0px 17px 0px rgba(204, 219, 232); /* Sombra interna */
+    overflow-y: auto; /* Rolagem vertical */
+}
+
+#opcoes {
+    margin-bottom: 5px; /* Margem inferior */
+    display: flex; /* Layout flexível */
+    width: 100%; /* Largura total */
+}
+
+#footer {
+    height: 40%; /* Altura de 40% */
+    padding: 15px; /* Preenchimento interno */
+}
+
+#imagem-linha {
+    width: 100px; /* Largura fixa das imagens na linha */
+}
+
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed; /* Posição fixa */
+    z-index: 1000; /* Camada superior */
+    padding-top: 10%; /* Espaço superior */
+    left: 0; /* Alinhado à esquerda */
+    top: 0; /* Alinhado ao topo */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente */
+    text-align: center; /* Texto centralizado */
+}
+
+.modal-conteudo {
+    max-width: 90%; /* Largura máxima */
+    max-height: 80vh; /* Altura máxima baseada na viewport */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.fechar {
+    position: absolute; /* Posição absoluta */
+    top: 20px; /* Distância do topo */
+    right: 35px; /* Distância da direita */
+    color: white; /* Cor branca */
+    font-size: 40px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Cursor de clique */
+}
+
+.imagem-linha {
+    width: 50px; /* Largura padrão */
+    height: 50px; /* Altura padrão */
+    cursor: pointer; /* Cursor de clique */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: transform 0.2s; /* Transição suave para zoom */
+}
+
+.imagem-linha:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+label {
+    align-content: center; /* Centraliza o conteúdo */
+}
+
+#registrar {
+    margin-left: auto; /* Alinha à direita */
+    margin-right: 10px; /* Margem à direita */
+    width: 180px; /* Largura fixa */
+}
+
+#enviar {
+    margin-right: 30px; /* Margem à direita */
+}
+
+#lerop {
+    margin-left: 30px; /* Margem à esquerda */
+    width: 180px; /* Largura fixa */
+}
+
+#dadosinsp {
+    display: flex; /* Layout flexível */
+    flex-direction: row; /* Itens em linha */
+    border-top: 1px solid #CCCCCC; /* Borda superior */
+    border-bottom: 1px solid #cccccc; /* Borda inferior */
+    padding-left: 20px; /* Preenchimento à esquerda */
+    padding-right: 20px; /* Preenchimento à direita */
+    height: 80%; /* Altura de 80% */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+#forms {
+    display: flex; /* Layout flexível */
+    width: 50%; /* Largura de 50% */
+    justify-content: center; /* Centraliza conteúdo */
+}
+
+#text {
+    align-content: center; /* Centraliza verticalmente */
+    justify-items: center; /* Centraliza horizontalmente */
+    padding-right: 5px; /* Preenchimento à direita */
+}
+
+#text input[type="number"] {
+    height: 25px; /* Altura fixa */
+    width: 40px; /* Largura fixa */
+    padding: 2px; /* Preenchimento interno */
+}
+
+#text input[type="text"] {
+    height: 30px; /* Altura fixa */
+    padding: 2px; /* Preenchimento interno */
+}
+
+.rows {
+    justify-content: center; /* Centraliza horizontalmente */
+    display: grid; /* Layout em grade */
+    width: 100%; /* Largura total */
+    margin-bottom: 10px; /* Margem inferior */
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+}
+
+.rows div {
+    justify-items: center; /* Centraliza horizontalmente */
+    align-items: end; /* Alinha ao final verticalmente */
+    display: grid; /* Layout em grade */
+    width: 80%; /* Largura de 80% */
+}
+
+#obs {
+    display: flex; /* Layout flexível */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 80%; /* Largura de 80% */
+}
+
+#imagens {
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    width: 500px; /* Largura fixa */
+    height: 300px; /* Altura fixa */
+    background-color: #D9D9D9; /* Cor de fundo cinza claro */
+    margin-bottom: 10px; /* Margem inferior */
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    overflow: hidden; /* Esconde excesso */
+    position: relative; /* Posição relativa para botões */
+}
+
+#carousel-container {
+    display: flex; /* Layout flexível */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    position: relative; /* Posição relativa */
+}
+
+#carousel {
+    display: flex; /* Layout flexível */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: hidden; /* Esconde excesso */
+    object-fit: cover; /* Ajusta imagens */
+}
+
+#carousel img {
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Ajusta imagem ao container */
+    display: none; /* Oculta por padrão */
+}
+
+#carousel img.active {
+    display: block; /* Exibe imagem ativa */
+}
+
+#prev-btn, #next-btn {
+    position: absolute; /* Posição absoluta */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino vertical */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px; /* Preenchimento interno */
+    cursor: pointer; /* Cursor de clique */
+    font-size: 20px; /* Tamanho da fonte */
+    z-index: 10; /* Camada superior */
+}
+
+#prev-btn { left: 10px; } /* Posiciona botão anterior à esquerda */
+#next-btn { right: 10px; } /* Posiciona botão próximo à direita */
+
+@media (max-width: 1400px) {
+    #imagens {
+        width: 300px; /* Reduz largura em telas menores */
+        height: 200px; /* Reduz altura em telas menores */
+    }
+}
+
+#salvar {
+    margin-left: 5px; /* Margem à esquerda */
+    align-self: center; /* Centraliza verticalmente */
+    width: 10%; /* Largura de 10% */
+    height: 30px; /* Altura fixa */
+    font-size: 12px; /* Tamanho da fonte */
+    margin-top: 10px; /* Margem superior */
+}
+
+#voltar {
+    margin-right: 5px; /* Margem à direita */
+    width: 10%; /* Largura de 10% */
+    height: 30px; /* Altura fixa */
+    font-size: 12px; /* Tamanho da fonte */
+    margin-top: 10px; /* Margem superior */
+}
+
+#tirar-foto {
+    align-self: center; /* Centraliza verticalmente */
+    width: 50%; /* Largura de 50% */
+    height: 30px; /* Altura fixa */
+    font-size: 12px; /* Tamanho da fonte */
+}
+
+#editar {
+    font-size: xx-small; /* Tamanho de fonte muito pequeno */
+}
+
+#tabela table {
+    border-collapse: collapse; /* Remove espaçamento entre células */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+}
+
+#buttons {
+    height: 10%; /* Altura de 10% */
+}
+
+#tabela thead th:first-child {
+    border-top-left-radius: 30px; /* Canto superior esquerdo arredondado */
+}
+
+#tabela thead th:last-child {
+    border-top-right-radius: 30px; /* Canto superior direito arredondado */
+}
+
+#tabela tr:last-child td:first-child {
+    border-bottom-left-radius: 30px; /* Canto inferior esquerdo arredondado */
+}
+
+#tabela tr:last-child td:last-child {
+    border-bottom-right-radius: 30px; /* Canto inferior direito arredondado */
+}
+
+#tabela thead {
+    position: sticky; /* Fixa o cabeçalho ao rolar */
+    top: 0; /* Alinha ao topo */
+}
+
+#tabela th {
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Texto centralizado */
+}
+
+#tabela td {
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Texto centralizado */
+    /* border: 1px solid #ddd; Borda para células (desativada) */
+}
+
+#tabela th {
+    background-color: #f2f2f2; /* Cor de fundo do cabeçalho */
+    font-weight: bold; /* Texto em negrito */
+}
+
+#tabela tr:nth-child(even) {
+    background-color: #f9f9f9; /* Cor de fundo para linhas pares */
+}
+
+#tabela tr:hover {
+    background-color: #e0e0e0; /* Cor ao passar o mouse */
+}
+
+#tabela tbody tr:hover {
+    cursor: pointer; /* Cursor de clique nas linhas */
+}
+
+/*#tabela td {
+    border: 1px solid #ccc; Borda das células (desativada)
+} */
+
+.dropdown-options {
+    display: none; /* Oculto por padrão */
+    position: absolute; /* Posição absoluta */
+    top: 100%; /* Abaixo do input */
+    width: 100%; /* Largura total */
+    max-height: 150px; /* Altura máxima com rolagem */
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1; /* Camada acima */
+    overflow-y: auto; /* Rolagem vertical */
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid #ccc; /* Borda cinza */
+}
+
+.option {
+    padding: 12px; /* Preenchimento interno */
+    cursor: pointer; /* Cursor de clique */
+    border-bottom: 1px solid #ddd; /* Borda inferior */
+}
+
+.option:hover {
+    background-color: #f1f1f1; /* Cor ao passar o mouse */
+}
+
+#customDropdown {
+    position: relative; /* Posição relativa */
+    width: 100%; /* Largura total */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+#dropdownContainer {
+    margin-left: auto; /* Alinha à direita */
+    position: relative; /* Posição relativa */
+    width: 100%; /* Largura total */
+}
+
+#dropdownContainer input {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Preenchimento interno */
+    box-sizing: border-box; /* Inclui borda e padding na largura */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-top: 10px; /* Margem superior */
+}
+
+#quantidades {
+    display: flex; /* Layout flexível */
+    justify-content: space-around; /* Espaçamento uniforme */
+}
+
+.quantidade {
+    width: 22%; /* Largura de 22% */
+    font-size: small; /* Tamanho da fonte pequeno */
+    height: 25.5px; /* Altura fixa */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove setas em navegadores Webkit */
+    margin: 0; /* Remove margens */
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Remove setas no Firefox */
+}
+
+#filterInput {
+    height: 25.5px; /* Altura fixa */
+    margin-top: 20px; /* Margem superior */
+}
+
+#dropdown {
+    display: none; /* Oculto por padrão */
+    top: 45px; /* Posição abaixo do input */
+    width: 100%; /* Largura total */
+    background-color: #fff; /* Fundo branco */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1; /* Camada acima */
+    max-height: 150px; /* Altura máxima */
+    overflow-y: auto; /* Rolagem vertical */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+#dropdown option {
+    padding: 12px; /* Preenchimento interno */
+    cursor: pointer; /* Cursor de clique */
+    border-bottom: 1px solid #ddd; /* Borda inferior */
+}
+
+#dropdown option:hover {
+    background-color: #f1f1f1; /* Cor ao passar o mouse */
+}
+
+#qr-reader {
+    display: none; /* Oculto por padrão */
+    transform: scaleX(1); /* Escala horizontal normal */
+}
+
+video {
+    width: 80px; /* Largura fixa */
+    height: 80px; /* Altura fixa */
+    object-fit: cover; /* Ajusta vídeo ao container */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+#operador {
+    height: 25.5px; /* Altura fixa */
+}
+
+#botoes {
+    left: auto; /* Sem posicionamento à esquerda */
+    top: 5; /* Distância do topo */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    position: fixed; /* Posição fixa */
+}
+
+@media (max-height: 700px) {
+    #botoes {
+        right: 5; /* Distância da direita */
+        margin: 0; /* Remove margens */
+        top: auto; /* Sem posicionamento fixo no topo */
+        display: flex; /* Layout flexível */
+        flex-direction: column-reverse; /* Ordem inversa em coluna */
+    }
+    #botoes button {
+        margin-top: 5px; /* Margem superior entre botões */
+    }
+}
+
+@media (max-width: 900px) {
+    #dadosinsp {
+        flex-direction: column; /* Muda para coluna em telas pequenas */
+    }
+    #text {
+        margin-bottom: 10px; /* Margem inferior */
+        height: auto; /* Altura automática */
+    }
+    #forms {
+        width: auto; /* Largura automática */
+    }
+    #salvar {
+        width: auto; /* Largura automática */
+    }
+    #voltar {
+        width: auto; /* Largura automática */
+    }
+}
+
+@media (max-width: 800px) {
+    #dados {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 1400px) {
+    #leitor {
+        width: 95%; /* Largura aumentada */
+    }
+    #excluir {
+        font-size: xx-small; /* Fonte muito pequena */
+    }
+    #imagens {
+        width: 300px; /* Largura reduzida */
+        height: 200px; /* Altura reduzida */
+    }
+    #titulo {
+        font-size: x-large; /* Tamanho da fonte ajustado */
+    }
+    #text {
+        margin-bottom: 50px; /* Margem inferior aumentada */
+    }
+    #text input[type="text"] {
+        height: 25px; /* Altura reduzida */
+        font-size: small; /* Fonte pequena */
+    }
+    #text input[type="number"] {
+        font-size: small; /* Fonte pequena */
+    }
+    #filterInput {
+        font-size: small; /* Fonte pequena */
+    }
+    #operador {
+        font-size: small; /* Fonte pequena */
+    }
+    label {
+        font-size: 15px; /* Tamanho da fonte ajustado */
+    }
+    .bloco {
+        width: 95%; /* Largura aumentada */
+        height: 95%; /* Altura aumentada */
+    }
+    #enviar, #registrar, #lerop {
+        font-size: small; /* Fonte pequena */
+        width: 140px; /* Largura reduzida */
+    }
+    #dados {
+        grid-row-gap: 80px; /* Espaçamento entre linhas aumentado */
+    }
+    #footer {
+        height: 40%; /* Altura mantida */
+    }
+    #tabela td {
+        font-size: x-small; /* Fonte muito pequena */
+    }
+    #tabela th {
+        font-size: x-small; /* Fonte muito pequena */
+    }
+    #h5 {
+        font-size: 15px; /* Tamanho da fonte ajustado */
+    }
+}
