@@ -6,7 +6,7 @@ function enviar($cbarras, $operacao, $recurso, $insp, $ref, $cons, $operador)
 {
     try {
         // Cria uma instância do cliente SOAP para conectar ao serviço web
-        $conn = new SoapClient("http://192.168.10.194:8180/ws0201/MADWS006.apw?WSDL");
+        $conn = new SoapClient("http://192.168.10.***:****/ws0201/MADWS006.apw?WSDL");
     } catch (Exception $e) {
         // Encerra a execução e exibe mensagem de erro se a conexão falhar
         die("Erro ao conectar ao serviço: " . $e->getMessage());
@@ -53,7 +53,7 @@ function enviar($cbarras, $operacao, $recurso, $insp, $ref, $cons, $operador)
 
     // Estrutura base dos parâmetros para envio ao serviço SOAP
     $params = [
-        "TOKEN" => "_SROODRAPEDAM_", // Token fixo para autenticação
+        "TOKEN" => "_******_", // Token fixo para autenticação
         "DADOSINSP" => [
             "CBARRAS" => $cbarras, // Código de barras
             "OPERACAO" => $operacao, // Operação realizada
