@@ -8,12 +8,14 @@ O sistema foi projetado para atender às necessidades de controle de qualidade, 
 ![Apontar_Qualidade](/Screenshots-Video/Apontar_Qualidade.png)
 
 ## 🚀 Principais Recursos
-- **Consulta Dinâmica:** Integração com um banco de dados SQL Server para consultas detalhadas baseadas em códigos de barras, exibindo informações como lote, operação, recurso e quantidade de forma imediata e precisa.
-- **Registro de Inspeções:** Interface amigável para registrar defeitos, quantidades não conformes e observações, com suporte a dropdowns dinâmicos atualizados via AJAX e persistência em sessão.
+- **Consulta Dinâmica:** Integração com um banco de dados SQL Server para consultas detalhadas baseadas em códigos de barras, exibindo informações como lote, operação, recurso e quantidade de forma imediata e precisa. ![Leitura do QrCode](/Screenshots-Video/QrCode_Lido.png)
+- **Registro de Inspeções:** Interface amigável para registrar defeitos, quantidades não conformes e observações, com suporte a dropdowns dinâmicos atualizados via AJAX e persistência em sessão. ![Tela de Registro de Erros](/Screenshots-Video/Tela_Registro_Inspecao.png)
 - **Captura e Gerenciamento de Imagens:** Funcionalidade avançada de captura de fotos via câmera do dispositivo, com um carrossel interativo para visualização, ampliação e exclusão de imagens, tudo armazenado em base64 e enviado ao servidor.
 - **Integração SOAP:** Comunicação eficiente com um serviço web SOAP para envio de dados de inspeção ao ERP, garantindo sincronização em tempo real com sistemas corporativos.
 - **Design Responsivo:** Estilização moderna com CSS personalizado e Bootstrap, assegurando uma experiência consistente em desktops e dispositivos móveis, com ajustes dinâmicos de altura usando variáveis CSS.
 - **Validações e Feedback:** Lógica sofisticada para validar quantidades (inspecionadas, refugo e conserto) e fornecer alertas ao usuário, prevenindo erros durante o processo.
+
+![Video de Apresentacao](/Screenshots-Video/Apontamento_Qualidade_Google_Chrome_2025-03-21_14-37-40.mp4)
 
 ## 🛠️ Tecnologias Utilizadas
 - **Back-end:** PHP com classes orientadas a objetos para consultas ao banco de dados (SQL Server via sqlsrv) e integração SOAP.
